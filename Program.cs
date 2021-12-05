@@ -6,7 +6,27 @@ namespace lab01_immutable
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MyImmutable temp = new MyImmutable("Some name");
+            MyImmutable temp2 = temp;
+            temp = new MyImmutable("another name");
+
+            System.Console.WriteLine(temp.GetName);
+            System.Console.WriteLine(temp2.GetName);
         }
+    }
+
+    class MyImmutable
+    {
+        private readonly string name;
+        
+        public MyImmutable(string str)
+        {
+            name = str;
+        }
+        public string GetName
+        {
+            get { return name; }
+        }
+
     }
 }
